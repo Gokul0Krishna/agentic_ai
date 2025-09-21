@@ -16,7 +16,7 @@ class File():
     def discribe_df(self):
         "returns df's discription and correlation and shape"
         x = self.df.corr()
-        y = self.df.info()
+        y = self.df.describe()
         z = self.df.shape
         return f'correlation of dependent on indepandent {x.iloc[:,-1]},information about the table{y},shape of table{z}'
     
