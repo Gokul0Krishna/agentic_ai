@@ -15,8 +15,9 @@ class File():
         
     def discribe_df(self):
         "returns df's discription and correlation and shape"
+        w = self.df.isna().sum()
         x = self.df.corr()
         y = self.df.describe()
         z = self.df.shape
-        return f'correlation of dependent on indepandent {x.iloc[:,-1]},information about the table{y},shape of table{z}'
+        return f'correlation of dependent on indepandent {x.iloc[:,-1].drop(self.df.columns[-1],axis=0)},information about the table{y},shape of table{z},number of null values is {w.sum()}'
     
